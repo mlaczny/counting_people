@@ -36,7 +36,8 @@ writer = None
 ct = CentroidTracker(maxDisappeared=60, maxDistance=50)
 trackers = []
 trackableObjects = {}
-way = "Unidentified"
+y_way = "Unidentified"
+x_way = "Unidentified"
 totalInVid = 0
 
 
@@ -93,7 +94,8 @@ def postprocess(frame, outs, class_number):
 
 
 def counting(objects):
-    global way
+    global y_way
+    global x_way
     global totalInVid
     inVid = 0
 
@@ -112,14 +114,21 @@ def counting(objects):
         # to determine direction
         else:
             y = [c[1] for c in to.centroids]
-            direction = centroid[1] - np.mean(y)
-            #print(direction)
+            y_direction = centroid[1] - np.mean(y)
             to.centroids.append(centroid)
             inVid += 1
-            if direction < 0:
-                way = "UP"
-            elif direction > 0:
-                way = "DOWN"
+            if y_direction < 0:
+                y_way = "UP"
+            elif y_direction > 0:
+                y_way = "DOWN"
+            print(y_direction)
+
+            x = [c[1] for c in to.centroids]
+            x_direction = centroid[1] - np.mean(x)
+            if x_direction > 0:
+                x_way = "LEFT"
+            elif x_direction < 0:
+                x_way = "RIGHT"
 
         # store the trackable object in our dictionary
         trackableObjects[objectID] = to
@@ -127,7 +136,9 @@ def counting(objects):
         # object on the output frame
         idNumber = "ID {}".format(objectID)
         totalInVid = "{}".format(objectID)
-        cv.putText(frame, way, (centroid[0] - 10, centroid[1] - 25),
+        cv.putText(frame, y_way, (centroid[0] - 10, centroid[1] - 20),
+                   cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+        cv.putText(frame, x_way, (centroid[0] - 10, centroid[1] - 35),
                    cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         cv.putText(frame, idNumber, (centroid[0] - 10, centroid[1] - 10),
                    cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
@@ -138,13 +149,16 @@ def counting(objects):
         ("Total_in_video", int(totalInVid) + 1),
         ("In_video", inVid),
     ]
-
+    #x, y, w, h = 0, 0, 175, 75
+    #cv.rectangle(frame, (x, x), (x + w, y + h), (0, 0, 0), -1)
     # loop over the info tuples and draw them on our frame
     for (i, (k, v)) in enumerate(info):
 
+
         text = "{}".format(v)
         if k == 'Total_in_video':
-            cv.putText(frame, f'Total in video: {text}', (10, 55),
+
+            cv.putText(frame, f'Total in video: {text}', (10, 55,),
                        cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
         if k == 'In_video':
             cv.putText(frame, f'In video now: {text}', (10, 95),
