@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+    <title>Wyświetlanie wideo</title>
+    <style>
+        /* stylizacja dla całego kontenera */
+        .video-container {
+            width: 60%; /* szerokość w procentach */
+            margin: 0 auto; /* wyśrodkowanie */
+        }
+        /* stylizacja dla samego wideo */
+        video {
+            width: ; auto/* pełna szerokość */
+            height: 60%; /* automatycznie dostosowywana wysokość */
+            box-shadow: 0px 0px 10px #333; /* cień */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="video-container">
+        <title>Python Flask - Odtwarzanie detekcji</title>
+        <h2>Wybierz plik do odtworzenia</h2>
+        <p>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        </p>
+        {% if filename %}
+        <div style="margin: 10px auto;">
+            <video autoplay="autoplay" controls="controls" preload="preload">
+                <source src="{{ url_for('display_video', filename=filename) }}" type="video/mp4"></source>
+            </video>
+        </div>
+        {% endif %}
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <input type="file" name="file" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Upload">
+            </p>
+        </form>
+    </div>
+</body>
