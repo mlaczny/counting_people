@@ -1,4 +1,0 @@
-numpy~=1.22.3
-scipy~=1.8.0
-opencv-python~=4.5.5.64
-argparse~=1.4.0
