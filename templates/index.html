@@ -2,24 +2,89 @@
 <head>
     <title>Wyświetlanie wideo</title>
     <style>
-        /* stylizacja dla całego kontenera */
-        .video-container {
-            width: 60%; /* szerokość w procentach */
-            margin: 0 auto; /* wyśrodkowanie */
-        }
-        /* stylizacja dla samego wideo */
-        video {
-            width: ; auto/* pełna szerokość */
-            height: 60%; /* automatycznie dostosowywana wysokość */
-            box-shadow: 0px 0px 10px #333; /* cień */
-        }
+    /* stylizacja dla całego kontenera */
+    .video-container {
+        width: 80%; /* szerokość w procentach */
+        margin: 0 auto; /* wyśrodkowanie */
+        border: 1px solid #ccc; /* obramowanie */
+        padding: 10px; /* odstęp wewnętrzny */
+        background-color: #fafafa; /* kolor tła */
+        text-align: center
+    }
+    /* stylizacja dla samego wideo */
+    video {
+        width: 100%; /* pełna szerokość */
+        height: auto; /* automatycznie dostosowywana wysokość */
+        box-shadow: 0px 0px 10px #333; /* cień */
+        border-radius: 10px; /* zaokrąglenie rogów */
+
+    }
+    /* stylizacja przycisku */
+    input[type="submit"] {
+        background-color: #4CAF50; /* kolor tła */
+        color: white; /* kolor tekstu */
+        padding: 12px 20px; /* odstęp wewnętrzny */
+        border: none; /* bez obramowania */
+        border-radius: 4px; /* zaokrąglenie rogów */
+        cursor: pointer; /* kursor "dłoń" */
+        font-size: 16px; /* rozmiar tekstu */
+        font-weight: bold; /* grubość tekstu */
+    }
+    /* stylizacja po najechaniu na przycisk */
+    input[type="submit"]:hover {
+        background-color: #45a049; /* zmiana koloru tła */
+    }
+    input[type="file"] {
+        padding: 12px 20px; /* odstęp wewnętrzny */
+        border: 2px solid #ccc; /* obramowanie */
+        border-radius: 4px; /* zaokrąglenie rogów */
+        font-size: 16px; /* rozmiar tekstu */
+        background-color: #f8f8f8; /* kolor tła */
+    }
+    /* stylizacja po najechaniu na pole */
+    input[type="file"]:hover {
+        border-color: #333; /* zmiana koloru obramowania */
+        cursor: pointer; /* kursor "dłoń" */
+    }
+    h1 {
+        font-size: 36px; /* rozmiar tekstu */
+        font-weight: bold; /* grubość tekstu */
+        text-align: center; /* wyśrodkowanie */
+        color: #333; /* kolor tekstu */
+        margin-bottom: 20px; /* odstęp między h1 a zawartością poniżej */
+    }
+    /* stylizacja h2 */
+    h2 {
+        font-size: 24px; /* rozmiar tekstu */
+        font-weight: bold; /* grubość tekstu */
+        text-align: center; /* wyrównanie do środka */
+        color: #555; /* kolor tekstu */
+        margin-bottom: 10px; /* odstęp między h2 a zawartością poniżej */
+    }
+    ul {
+        list-style-type: none; /* bez punktorów */
+        margin: 0; /* bez marginesu */
+        padding: 0; /* bez odstępu wewnętrznego */
+        overflow: hidden; /* brak przewijania */
+    }
+    /* stylizacja elementów listy */
+    li {
+        float: center; /* elementy z lewej strony */
+        border-right: 1px solid #bbb; /* obramowanie po prawej stronie */
+        padding: 8px 16px; /* odstęp wewnętrzny */
+        color: #4CAF50;
+    }
+    /* stylizacja po najechaniu na element listy */
+    li:hover {
+        background-color: #f1f1f1; /* zmiana koloru tła */
+    }
     </style>
 
 </head>
 <body>
     <div class="video-container">
         <title>Python Flask - Odtwarzanie detekcji</title>
-        <h2>Wybierz plik do odtworzenia</h2>
+        <h1>Odtwarzacz</h1>
         <p>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -32,12 +97,14 @@
         {% endwith %}
         </p>
         {% if filename %}
+
         <div style="margin: 10px auto;">
             <video autoplay="autoplay" controls="controls" preload="preload">
                 <source src="{{ url_for('display_video', filename=filename) }}" type="video/mp4"></source>
             </video>
         </div>
         {% endif %}
+        <h2>Wybierz plik do odtworzenia</h2>
         <form method="post" action="/" enctype="multipart/form-data">
             <dl>
                 <p>
