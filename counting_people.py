@@ -25,7 +25,7 @@ with open(classesFile, 'rt') as f:
 
 # Give the configuration and weight files for the model and load the network using them.
 modelConfiguration = "yolov3.cfg"
-modelWeights = "yolov3.weights"
+modelWeights = "yolov3.weights" # yolov5m.pt
 
 # load our serialized model from disk
 print("[INFO] loading model...")
@@ -222,8 +222,8 @@ while cv.waitKey(1) < 0:
     cv.imshow(winName, frame)  # Wyświetlanie ramek video
 
 # ludzie
-# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/People_counting_basic/vid/test.mp4 --type_id 1
+# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/counting_people/vid/test.mp4 --type_id 1
 # auta
-# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/People_counting_basic/vid/test_2.mp4 --type_id 2
+# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/counting_people/vid/test_2.mp4 --type_id 2
 # uczelnia
-# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/People_counting_basic/vid/test_2.mp4
+# Usage:  python counting_people.py --video /Users/m.laczny/PycharmProjects/counting_people/vid/test_2.mp4

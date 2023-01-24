@@ -1,0 +1,14 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/yolov3.weights\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 5bba710cad17ccc5ff49b7bfc62104e9fef6d981)
++++ b/.gitignore	(date 1674518296956)
+@@ -1,1 +1,2 @@
+ /yolov3.weights
++/vid
+\ No newline at end of file
