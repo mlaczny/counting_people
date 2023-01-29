@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23676b39-de9c-4105-9985-16d07de5ce29" name="Changes" comment="Stworzenie plików do flaska, aktualizacja">
+    <list default="true" id="23676b39-de9c-4105-9985-16d07de5ce29" name="Changes" comment="edycja styli">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coco.names" beforeDir="false" afterPath="$PROJECT_DIR$/coco.names" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/counting_people.py" beforeDir="false" afterPath="$PROJECT_DIR$/counting_people.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/centroidtracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/centroidtracker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/ignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/utils/ignore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/trackableobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/trackableobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vid/test_3_output.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vid/test_3_output.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yolov3.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/yolov3.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yolov5m.pt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dodanie_flaska" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,17 +47,17 @@
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="counting_people" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="counting_people" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/counting_people.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -64,7 +73,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3.8" />
+      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -79,6 +88,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.counting_people" />
+      <item itemvalue="Python.main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
@@ -126,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674519287470</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Stworzenie plików do flaska, dodanie styli">
+      <created>1674523126133</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674523126133</updated>
+    </task>
+    <task id="LOCAL-00006" summary="edycja styli">
+      <created>1674523545261</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1674523545261</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +184,8 @@
     <MESSAGE value="Dodanie yolov3" />
     <MESSAGE value="Stworzenie plików do flaska" />
     <MESSAGE value="Stworzenie plików do flaska, aktualizacja" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stworzenie plików do flaska, aktualizacja" />
+    <MESSAGE value="Stworzenie plików do flaska, dodanie styli" />
+    <MESSAGE value="edycja styli" />
+    <option name="LAST_COMMIT_MESSAGE" value="edycja styli" />
   </component>
 </project>
